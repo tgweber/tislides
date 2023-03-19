@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/night.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -20,6 +20,9 @@
                 float: left;
                 margin: 0 15px 0 0;
                 width: 250px;
+            }
+            .bb {
+                background-color: #191919;
             }
         </style>
 	</head>
@@ -138,15 +141,16 @@
                     </section>
                 </section>
                 <section>
-                    <h4>Inhaltlicher Überblick</h4>
+                    <h4 class="bb">Inhaltlicher Überblick</h4>
                     <section>
                         <p>Was ist theoretische Informatik?</p>
                         <img data-src="images/schnitt.png"</img>
                     </section>
-                    <section>
-                        <div class="muchtext">
+                    <section data-background-image="images/plan.jpg">
+                        <div class="muchtext bb">
                         <h5>Wie ist die Vorlesung geplant?</h5>
-                        <ol>
+                        <p class="bb">
+                        <ol class="bb">
                             <li>Organisatorisches / Probleme und Formale Sprachen (heute)</li>
                             <li>Algorithmen und Automaten (3.4.2023) | AB 1</li>
                             <li>Aufwand und Landau-Notation (17.4.2023)</li>
@@ -155,31 +159,97 @@
                             <li>Unberechenbarkeit und Diagonalisierung (15.5.2023) | AB 3</li>
                             <li>Ausblick, Wiederholung (22.5.2023)</li>
                         </ol>
+                        </p>
                         </div>
                     </section>
                 </section>
                 <section>
-                    <h2>Was sind Probleme?</h2>
+                    <h2 style="color: black; background-color: white">Was sind Probleme?</h2>
+                    <section data-background-image="images/even.jpg">
+                        <p class="bb">
+                            Als Kommisionier:in möchte ich 
+                            die Anzahl der geplanten Paletten pro LKW kennen,
+                            um zu sehen, ob Platz für den Hubwagen bleibt.
+                        </p>
+                    </section>
+                    <section data-background-image="images/supplier.png">
+                        <p class="bb">
+                            Als Einkaufsmanager:in möchte ich,<br/>
+                            dass nur valide Lieferanten- IDs gespeichert werden,
+                            um Fehler in der Datenbank zu vermeiden.
+                        </p>
+                    </section>
+                    <section data-background-image="images/sortiment.jpg">
+                        <p class="bb">
+                            Als Verantwortliche:r fürs Spiegel-Management
+                            will ich eine nach Verkaufszahlen sortierte Liste von Artikeln,
+                            um die Regalaufteilung daran auszurichten.
+                        </p>
+                    </section>
+                    <section data-background-image="images/identity.jpg">
+                        <p class="bb">
+                            Als Einkaufsmanager:in möchte ich,
+                            dass das Sortiment in allen Filialien identisch ist,
+                            um alle anderen Prozesse darauf ausrichten zu können. 
+                        </p>
+                    </section>
+                    <section data-background-image="images/route.png">
+                        <p class="bb">
+                            Als Logistiker:in möchte ich,
+                            dass morgens die optimalen Routen für die LKWs
+                            in die 24 Filialen berechnet werden,
+                            um die Lieferzeit zu minimieren.
+                        </p>
+                    </section>
+                    <section data-background-image="images/halt.jpg">
+                        <p class="bb">
+                            Als Product Owner:in des Serverless-Computings möchte ich,
+                            dass nur terminierende Code-Snippets deployt werden,
+                            um die verfügbaren Ressourcen effizient zu nutzen.
+                        </p>
+                    </section>
+                </section>
+                <section> 
                     <section>
-                        <h2>Beispiel-Problem 1</h2>
+                        <h2>Abstraktion</h2>
+                        <ul>
+                            <li>Weglassen unwesentlicher Informationen</li>
+                            <li>Benötigt kreative Intelligenz</li>
+                        </ul>
+                        <aside class="notes">
+                            Tafelbild:
+                            <ul>
+                                <li>Als Kommisionier:in möchte ich die Anzahl
+                                    der geplanten Paletten pro LKW kennen,
+                                    um zu sehen, ob Platz für den Hubwagen bleibt.
+                                    (ursprüngliche Userstory).
+                                </li>
+                                <li> Identifikation der Anzahl an Paletten,
+                                    um verfügbaren Platz zu quantifzieren.
+                                    (Wer die Anzahl kennen will
+                                    und wofür der Platz gedacht ist, ist für unseren
+                                    Zweck gleichgültig.)
+                                </li>
+                                <li>
+                                    Ist die Anzahl an Paletten (un)gerade?
+                                    (Es ist z.B. egal, ob zwei, drei oder
+                                    mehr Paletten pro LKW nebeneinander passen,
+                                    Hauptsache es bleibt Platz.)
+                                </li>
+                                <li>
+                                    Ist eine Zahl gerade?
+                                    (Es ist egal, ob wir dies für Paletten oder andere
+                                    Objekte entscheiden.)
+                                </li>
+                            </ul>
+                        </aside>
                     </section>
                     <section>
-                        <h2>Beispiel-Problem 2</h2>
-                    </section>
-                    <section>
-                        <h2>Beispiel-Problem 3</h2>
-                    </section>
-                    <section>
-                        <h2>Beispiel-Problem 4</h2>
-                    </section>
-                    <section>
-                        <h2>Beispiel-Problem 5</h2>
-                    </section>
-                    <section>
-                        <h2>Beispiel-Problem 6</h2>
-                    </section>
-                    <section>
-                        <h2>Abstraktion &amp; Formalisierung</h2>
+                        <h2>Informelle Angabe</h2>
+                            <p>Gegeben: Eine Zahl</p>
+                            <p>Gesucht: Ein Wahrheitswert, 
+                                der anzeigt, ob die Zahl gerade ist.
+                            </p>
                     </section>
                     <section>
                         <h2>Grundsätzliche Fragen</h2>
@@ -189,18 +259,75 @@
                             <li>Ist ein Problem lösbar?</li>
                         </ul>
                     </section>
+                </section>
+                <section>
+                    <h5>Zeichen</h5>
+                    <p>Eine Menge von Zeichen: Alphabet ($\Sigma$)</p>
+                    <p class="fragment" style="background-color: green">
+                        Kanonisches Beispiel: $\Sigma = \{0,1\}$
+                    </p>
+                </section>
+                <section>
+                    <h5>Wörter</h5>
                     <section>
-
+                        <p>beliebige Konkatenation von Zeichen: Wörter</p>
+                        <p class="fragment">
+                            <ul>
+                                <li class="fragment">Beispiel: $w = 110$</li>
+                                <li class="fragment">$\epsilon \rightarrow $ leeres Wort</li>
+                                <li class="fragment">
+                                    $\Sigma^* \rightarrow$ Kleenesche Hülle<br/>
+                                    (Alle Wörter über einem Alphabet)
+                                </li>
+                            </ul>
+                        </p>
+                    </section>
+                    <section>
+                        <p>Länge eines Wortes: Anzahl an Zeichen</p>
+                        <p class="fragment">
+                            Beispiele:
+                            <ul>
+                                <li class="fragment">$|w| = 3$</li>
+                                <li class="fragment">$|\epsilon| = 0$</li>
+                            </ul>
+                        </p>
+                    </section>
+                    <section>
+                        <p>Wiederholung von Zeichen und Wörtern</p>
+                        <p class="fragment">
+                            <ul>
+                                <li class="fragment">
+                                    $1^{3} = 111$<br/>
+                                    $w^{3} = 110110110$<br/>
+                                    $w^{0} = \epsilon$
+                                </li>
+                                <li class="fragment">
+                                    Kleene-Stern</br>
+                                    $1^{*} = \{\epsilon, 1, 11, 111 \ldots\}$<br/>
+                                    $w^{*} = \{\epsilon, 110, 110110, \ldots\}$
+                                </li>
+                            </ul>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            Teilwortfunktion
+                            $tw:
+                            \Sigma^* \times \mathbb{N} \times \mathbb{N}
+                            \rightarrow
+                            \Sigma^*$
+                        </p>
+                        <p class="fragment">
+                            $tw(w,i,l)$</br> 
+                            Teilwort von $w$ beginnend bei Zeichen $i$ der Länge $l$
+                        </p>
+                        <p class="fragment">
+                            Beispiel:<br/>
+                            $tw(1001,1,2) = 00$
+                        </p>
                     </section>
                 </section>
                 <section>
-                    <h2>Formale Sprachen</h2>
-                    <section>
-                        <p>Zeichen</p>
-                    </section>
-                    <section>
-                        <p>Wörter</p>
-                    </section>
                     <section>
                         <p>Formale Sprachen</p>
                     </section>
@@ -218,6 +345,7 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/math/math.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -226,7 +354,7 @@
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
 			});
 		</script>
 	</body>
