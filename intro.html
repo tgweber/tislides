@@ -25,6 +25,10 @@
                 background-color: #191919;
                 list-style: none;
             }
+            .wb {
+                color: black !important; 
+                background-color: white
+            }
         </style>
 	</head>
 	<body>
@@ -32,10 +36,10 @@
 			<div class="slides">
                 <section>
                     <h3>Theoretische Informatik I<br/> (Wirtschaftsinformatik)</h3>
-                    <p>Vorlesung Sommersemester 2023<br/>DHBW HN<br/>Dr. Tobias Weber</p>
+                    <p>Vorlesung Sommersemester 2023<br/>DHBW HN</p>
                 </section>
                 <section data-background-image="images/orga.jpg" data-background-opacity="0.2">
-                    <h4 class="bb">Organisatorisches</h4>
+                    <h4 class="wb">Organisatorisches</h4>
                     <section>
                         <h5 class="bb fragment">Wer hält die Vorlesung?</h5>
 
@@ -71,7 +75,7 @@
                     <section>
                         <h5 class="bb">Welche Materialien werden bereitgestellt?</h5>
                             <p class="bb fragment">
-                                <a href="https://dk:readit@tgweber.de/slides/intro.html">
+                                <a href="https://dk:readit@tgweber.de/ti/slides/intro.html">
                                     Slides
                                 </a>
                             </p>
@@ -134,7 +138,7 @@
                     </section>
                 </section>
                 <section>
-                    <h4 class="bb">Inhaltlicher Überblick</h4>
+                    <h4 class="wb">Inhaltlicher Überblick</h4>
                     <section>
                         <p>Was ist theoretische Informatik?</p>
                         <img data-src="images/schnitt.png"</img>
@@ -144,20 +148,26 @@
                         <h5>Wie ist die Vorlesung geplant?</h5>
                         <p class="bb">
                         <ol class="bb">
-                            <li>Organisatorisches / Probleme und Formale Sprachen (heute)</li>
-                            <li>Algorithmen und Automaten (3.4.2023)</li>
-                            <li>Aufwand und Landau-Notation (17.4.2023)</li>
-                            <li>Berechenbarkeit und Turing-Maschinen (24.4.2023)</li>
-                            <li>Komplexität und das P-NP-Problem (08.5.2023)</li>
-                            <li>Unberechenbarkeit und Diagonalisierung (15.5.2023)</li>
-                            <li>Ausblick, Wiederholung (22.5.2023)</li>
+                            <li>
+                                <span class="fragment">Organisatorisches<br/></span>
+                                <span class="fragment">Probleme und Formale Sprachen (heute)</span>
+                            </li>
+                            <li class="fragment">Algorithmen und Automaten (3.4.2023)</li>
+                            <li class="fragment">Aufwand und Landau-Notation (17.4.2023)</li>
+                            <li class="fragment">Berechenbarkeit und Turing-Maschinen (24.4.2023)</li>
+                            <li class="fragment">Komplexität und das P-NP-Problem (08.5.2023)</li>
+                            <li class="fragment">Unberechenbarkeit und Diagonalisierung (15.5.2023)</li>
+                            <li class="fragment">Ausblick, Wiederholung (22.5.2023)</li>
                         </ol>
                         </p>
                         </div>
                     </section>
                 </section>
                 <section>
-                    <h2 style="color: black; background-color: white">Was sind Probleme?</h2>
+                    <h2 class="wb" >Was sind Probleme?</h2>
+                    <section data-background-image="images/problem.jpg">
+                        <p/>
+                    </section>
                     <section data-background-image="images/even.jpg">
                         <p class="bb">
                             Als Kommisionier:in möchte ich 
@@ -204,7 +214,7 @@
                 </section>
                 <section data-background-image="images/abstrakt.jpg"> 
                     <section>
-                        <h2 class="bb">Abstraktion</h2>
+                        <h2 class="wb">Abstraktion</h2>
                         <p class="fragment bb">Weglassen unwesentlicher Informationen</p>
                         <p class="fragment bb">Nötig: Kreative Intelligenz</p>
                         <aside class="notes">
@@ -236,28 +246,33 @@
                         </aside>
                     </section>
                     <section>
-                        <h2 class="bb">Informelle Angabe</h2>
+                        <h2 class="wb">Informelle Angabe</h2>
                         <p class="bb fragment">Gegeben: <br/>Eine Zahl</p>
                         <p class="bb fragment">Gesucht:<br/>
                             Ein Wahrheitswert, der anzeigt, ob die Zahl gerade ist.
                         </p>
                     </section>
                     <section>
-                        <h2 class="bb">Grundsätzliche Fragen</h2>
+                        <h2 class="wb">Grundsätzliche Fragen</h2>
                         <p class="bb fragment">Wie <em>formalisieren</em> wir ein Problem?</p>
                         <p class="bb fragment">Wie <em>schwer</em> ist ein Problem?</p>
                         <p class="bb fragment">Ist ein Problem <em>lösbar</em>?</p>
                     </section>
                 </section>
                 <section data-background-image="images/atoms.jpg">
-                    <h5>Zeichen</h5>
-                    <p class="bb">Eine Menge von Zeichen: Alphabet ($\Sigma$)</p>
+                    <h5 class="wb">Zeichen</h5>
+                    <p class="bb fragment">0,1,...<br/></p> 
+                    <p class="bb fragment">a,b,...,A,B...<br/></p> 
+                    <p class="bb fragment">#,@,$,...<br/></p> 
+                    <p class="bb fragment">&#129409; &#127541;<br/></p> 
+                    <p class="bb fragment">sounds, smells,...<br/></p>
                     <p class="fragment bb" style="background-color: green">
                         Kanonisches Beispiel: $\Sigma = \{0,1\}$
                     </p>
+                    <p class="fragment bb">Eine Menge von Zeichen: Alphabet ($\Sigma$)</p>
                 </section>
                 <section data-background-image="images/words.jpg">
-                    <h5 class="bb">Wörter</h5>
+                    <h5 class="wb">Wörter</h5>
                     <section>
                         <p class="bb fragment">
                             beliebige Konkatenation von Zeichen
@@ -318,7 +333,7 @@
                     </section>
                 </section>
                 <section data-background-image="images/fl.jpg">
-                    <h5 class="bb">Formale Sprachen</h5>
+                    <h5 class="wb">Formale Sprachen</h5>
                     <section>
                             <p class="bb fragment">
                                 Menge von Worten
@@ -341,13 +356,13 @@
                         </p>
                     </section>
                     <section>
-                        <p class="bb">Ein Beispiel</p>
-                        <p class="bb">Gegeben: Eine Zahl</p>
-                        <p class="bb">Gesucht: Ein Wahrheitswert, 
-                            der anzeigt, ob die Zahl gerade ist.
+                        <p class="bb">
+                            Beispiel: <br/>
+                            Diese formale Sprache repräsentiert ein Problem:
                         </p>
+                        <p class="bb">$EVEN := \{0, 10, 100, 110, 1000, ...\}$</p>
                         <aside class="notes">
-                            EVEN :={0, 10, 100, 110, 1000, ...}
+                            
                             <ul>
                                 <li>SUM = {[0,0,0], [0,1,1]...}</li>
                                 <li>bin(word) 0 = 00, 1 = 01, ...</li>
