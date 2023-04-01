@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>TheoInf</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+        <style>
+            .muchtext {
+                font-size: 20px;
+            }
+            .leftimage {
+                float: left;
+                margin: 0 15px 0 0;
+                width: 250px;
+            }
+            .bb {
+                background-color: #191919;
+                list-style: none;
+            }
+            .wb {
+                color: black !important; 
+                background-color: white
+            }
+            .strong {
+                font-weight: bold;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <h3>Kapitel 2: Algorithmen und Automaten</h3>
+                    <img data-src="images/slides.png" width="150px"/>
+                </section>
+                <section data-background-image="images/algorithm.jpg" data-background-opacity="0.2">
+                    <h5 class="wb">Algorithmus und Implementierung</h5>
+                    <section>
+                        <p class="bb">Was ist ein Algorithmus (nach D. E. Knuth)?</p>
+                        <p class="bb fragment">
+                            Ein Algorithmus ist
+                            eine schrittweise Anweisung zur Lösung eines Problems,
+                            die...
+                        </p>
+                    </section>
+                    <section>
+                        <p class="bb">
+                            Ein Algorithmus ist
+                            eine schrittweise Anweisung zur Lösung eines Problems,
+                            die...
+                        </p>
+                        <p class="bb strong">...endet (finiteness).</p>
+                        <aside class="notes">
+                            Berechnungsmethode
+                        </aside>
+                    </section>
+                    <section>
+                        <p class="bb">
+                            Ein Algorithmus ist
+                            eine schrittweise Anweisung zur Lösung eines Problems,
+                            die...
+                        </p>
+                        <p class="bb strong">
+                            ...unmissverständlich formuliert ist (definiteness)
+                        </p>
+                        <aside class="notes">
+                            Rezept (Messerspitze Cayennepfeffer),
+                            Lese die Bytes (Reihenfolge Chunks?)
+                        </aside>
+                    </section>
+                    <section>
+                        <p class="bb">
+                            Ein Algorithmus ist
+                            eine schrittweise Anweisung zur Lösung eines Problems,
+                            die...
+                        </p>
+                        <p class="bb strong">...einen (leeren) Input hat.</p>
+                        <aside class="notes">
+                            Formale Sprachen.
+                        </aside>
+                    </section>
+                    <section>
+                        <p class="bb">
+                            Ein Algorithmus ist
+                            eine schrittweise Anweisung zur Lösung eines Problems,
+                            die...
+                        </p>
+                        <p class="bb strong">...einen vom Input abhängigen Output hat.</p>
+                        <aside class="notes">
+                            Formale Sprachen.
+                        </aside>
+                    </section>
+                    <section>
+                        <p class="bb">
+                            Ein Algorithmus ist
+                            eine schrittweise Anweisung zur Lösung eines Problems,
+                            die...
+                        </p>
+                        <p class="bb strong">...sich durchführen lässt (effectiveness).</p>
+                        <aside class="notes">
+                            Beispiel: Löse das Problem. Nutze unendlich viele Ressourcen 
+                        </aside>
+                    </section>
+                    <section>
+                        <p class="bb">
+                            Ein Algorithmus ist
+                            eine schrittweise Anweisung zur Lösung eines Problems,
+                            die endet, unmissverständlich formuliert ist, einen Input hat,
+                            einen vom Input abhängigen Output hat und durchführbar ist.
+                        </p>
+                    </section>
+                    <section>
+                        <p class="wb">
+                        Algorithmus $\neq$ Implementierung
+                        </p>
+                        <p class="fragment bb">
+                            Eine Implementierung realisiert
+                            einen Algorithmus in eine bestimmten Form.
+                        </p>
+                    </section>
+                    <section>
+                        <p class="wb">
+                        Beziehungen 
+                        </p>
+                        <p class="fragment bb">
+                            Ein Problem kann von mehreren Algorithmen gelöst werden.
+                            <aside class="notes">Sortieren: Bubblesort, Quicksort, Radixsort</aside>
+                        </p>
+                        <p class="fragment bb">
+                            Ein Algorithmus kann mehrere Implementierungen haben.
+                            <aside class="notes">Verschiedene Sprachen,
+                                aber auch innerhalb einer Sprache.</aside>
+                        </p>
+                    </section>
+                </section>
+                <section data-background-image="images/automat.jpg" data-background-opacity="0.4">
+                    <h5 class="wb">Deterministisch Finite Automaten</h5>
+                    <section>
+                        <p class="fragment bb">
+                            DFAs sind eine einfache Möglichkeit<br/>
+                            einen Algorithmus zu implementieren.
+                        </p>
+                        <aside class="notes">
+                            Das "Hello World" der theoretischen Informatik.
+                            Tafel EVEN, Schritt für Schritt Automat
+                        </aside>
+                    </section>
+                    <section>
+                        <p class="bb">Formale Definition (Mengenlehre)</p>
+                        <p class="fragment bb">
+                            Ein DFA ist ein 5-Tupel 
+                            $[\Sigma, Z, \delta, z_i, E]$
+                        </p>
+                        <p class="fragment bb">$\Sigma$: Eingabealphabet</p>
+                        <p class="fragment bb">$Z$: Zustände</p>
+                        <p class="fragment bb">$\delta$: Übergangsfunktion</p>
+                        <p class="fragment bb">$z_i$: Anfangszustand</p>
+                        <p class="fragment bb">$E$: Endzustände</p>
+                    </section>
+                    <aside class="notes">Tafel: Aufschreiben</aside>
+                    <section>
+                        <p class="wb">Schnappschuss</p>
+                        <p class="bb">
+                            Zustand, in dem ein DFA beim Lesen eines Wortes ist: $[z, w]$
+                        </p>
+                        <aside class="notes">Zeige an Tafel für Wort 110</aside>
+                    </section>
+                    <section>
+                        <p class="wb">Schnappschussfolge</p>
+                        <p class="fragment bb">
+                            Folge von Schnappschüssen, die sich aus $\delta$ ergebt.
+                        </p>
+                        <p class="fragment bb">
+                            Für je zwei Schnappschüsse<br/>
+                            $[z_n, w_n]$ und $[z_{n+1}, w_{n+1}]$<br/>
+                            aus der Folge gilt:
+                        </p>
+                        <p class="fragment bb">
+                            $z_{n+1} = \delta(tw(w_{n},0,1), z_n)$ und<br/>
+                            $w_{n+1} = tw(w,1,|w|-1)$.
+                        </p>
+                        <aside class="notes">Zeige an Tafel für Wort 110</aside>
+                    </section>
+                    <section>
+                        <p class="wb">Lauf</p>
+                        <p class="fragment bb">
+                            Ein Lauf $l_{w, A}$ für $w$ auf $A$
+                            ist eine Schnappschussfolge $S$ mit
+                        </p>
+                        <p class="fragment bb">
+                            $s_0 = [w, z_i]$
+                        </p>
+                        <p class="fragment bb">
+                            $s_{|w|} = [\epsilon, z]$ mit $z \in Z$
+                        </p>
+                        <p class="fragment bb">
+                        Der Lauf ist akzeptierend, wenn für $s_{|w|}$ gilt: $z \in E$
+                        </p>
+                    </section>
+                    <section>
+                        <p class="fragment bb">
+                            Deterministisch:<br/>
+                            Jeder Lauf ist eindeutig für ein $w$.
+                        </p>
+                        <p class="fragment bb">
+                            Finit:<br/>
+                            Jeder Lauf für ein $w$ endet.
+                        </p>
+                    </section>
+                    <section>
+                        <p class="bb">
+                        Kann man DFAs als<br/>
+                        Implementierungen eines Algorithmus<br/>
+                        auffassen?
+                        </p>
+                    </section>
+                    <section>
+                        <p class="wb">Formale Sprachen und DFAs</p>
+                        <p class="fragment bb">DFAs erkennen formale Sprachen (Akzeptoren)</p>
+                    </section>
+                    <section>
+                        <p class="wb">DFA-berechenbar</p>
+                        <p class="bb fragment">
+                            Ein Problem ist genau dann DFA-Berechenbar,
+                            wenn eine Formale Sprache, die das Problem repräsentiert,
+                            von einem DFA erkannt wird.
+                        </p>
+                    </section>
+                    <section>
+                        <p class="wb">
+                        Gibt es formale Sprachen,<br/>
+                        die <span class="strong">nicht</span> von einem DFA erkannt werden?
+                        </p>
+                    </section>
+                    <aside class="notes">
+                        Wenn Zeit: Weitere Beispiele: Endet auf a, Genau drei a....
+                    </aside>
+                </section>
+                <section data-background-image="images/min.jpg" data-background-opacity="0.2">
+                    <h5 class="wb">Minimalisierung</h5>
+                    <section>
+                        <p class="bb">
+                            DFAs lassen sich minimalisieren, d.h. wir finden den "kleinsten" DFA.
+                        </p>
+                    </section>
+                    <section>
+                        <div class="muchtext">
+                        <p class="fragment bb">
+                        Schritt 1:<br/>Tabelle mit allen Zustandspaaren
+                        </p>
+                        <p class="fragment bb">
+                        Schritt 2:<br/>Markiere Diagonale + Doppelfelder
+                        </p>
+                        <p class="fragment bb">
+                        Schritt 3:<br/>Markiere End- und nicht Endzustände
+                        </p>
+                        <p class="fragment bb">
+                            Schritt $n \gt 4$:<br/>
+                            Markiere Zustände, die sich bzgl. $\delta$ unterscheiden<br/>
+                            (keine Änderung: Abbruch)
+                        </p>
+                        <p class="fragment bb">
+                            Schritt $n+1$:<br/> 
+                            Verschmelze unmarkierte Zustände
+                        </p>
+                        </div>
+                    </section>
+                    <section>
+                        <p class="wb">Ein Beispiel</p>
+                        <img class="fragment" data-src="images/tobemin.png" width="700px"/>
+                    </section>
+                    <section>
+                        <p class="wb">Warum ist Minimierung wichtig?</p>
+                        <p class="bb fragment">Minimale Form eines Algorithmus</p>
+                        <p class="bb fragment">Eindeutiges Identitätskriterium für Algorithmen, DFAs und (alle?) formale Sprachen</p>
+                    </section>
+                </section>
+                <section data-background-image="images/supplier.png" data-background-opacity="0.2">
+                    <h5 class="wb">Reguläre Ausdrücke</h5>
+                    <section>
+                        <p class="bb">
+                            Mit einem regulären Ausdruck $\gamma$ 
+                            kann man auch formale Sprachen beschreiben.
+                            Induktive Definition der beschriebenen Sprache:
+                        </p>
+                        <p class="bb fragment">
+                            $\gamma = \emptyset \rightarrow L(\gamma) = \emptyset$
+                        </p>
+                        <p class="bb fragment">
+                            $\gamma = \epsilon \rightarrow L(\gamma) = \{\epsilon\}$
+                        </p>
+                        <p class="bb fragment">
+                            $\gamma = a \in \Sigma \rightarrow L(\gamma) = \{a\}$
+                        </p>
+                        <p class="bb fragment">
+                            Diese regulären Ausdrücke sind von Formelgrad 0.
+                        </p>
+                    </section>
+                    <section>
+                        <div class="muchtext">
+                        <p class="bb">Formelgrad $n+1$:
+                            Seien $\alpha, \beta$ reguläre Ausdrücke vom Formelgrad $n$:
+                        </p>
+                         <p class="bb fragment">
+                            $\gamma =  \alpha\beta \rightarrow L(\gamma) 
+                                = \{wv| w \in L(\alpha) \wedge v \in L(\beta)\}$
+                        </p>
+                         <p class="bb fragment">
+                            $\gamma =  \alpha|\beta \rightarrow L(\gamma) 
+                                = L(\alpha) \cup L(\beta)$
+                        </p>
+                         <p class="bb fragment">
+                            $\gamma =  (\alpha)^* \rightarrow L(\gamma) = L(\alpha)^*$
+                        </p>
+                        </div>
+                        <aside class="notes">
+                            Beispiele EVEN = L(0|1(01)*0) ENDS1 = L((0|1)*1)
+                        </aside>
+                    </section>
+                    <section>
+                        <p class="bb">Die von DFAs erkannten formalen Sprachen werden auch
+                        <span class="strong fragment">reguläre</span> Sprachen genannt.
+                        </p>
+                        <p class="fragment bb">
+                            Satz von Kleene:<br/>
+                            Reguläre Ausdrücke und DFAs erkennen die gleichen Sprachen
+                        </p>
+                    </section>
+                    <section>
+                        <p class="bb">Jede endliche Sprache ist regulär</p>
+                        <aside class="notes">Beispiele an Tafel</aside>
+                    </section>
+                    <section >
+                        <p class="bb">
+                            Als Einkaufsmanager:in möchte ich,<br/>
+                            dass nur valide Lieferanten- IDs gespeichert werden,
+                            um Fehler in der Datenbank zu vermeiden.
+                        </p>
+                        <aside class="notes">import re; if re.fullmatch("S(0|[1-9]\d*)", supplierid)
+                    </section>
+                </section>
+                <section>
+                    <h5>Nachbereitung</h5>
+                    <ul>
+                        <li>Kapitel 2 in Skript</li>
+                        <li>Aufgaben aus Kapitel 2</li>
+                    </ul>
+                </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>
