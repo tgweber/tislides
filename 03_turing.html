@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>TheoInf</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+        <style>
+            .muchtext {
+                font-size: 20px;
+            }
+            .leftimage {
+                float: left;
+                margin: 0 15px 0 0;
+                width: 250px;
+            }
+            .bb {
+                background-color: #191919;
+                list-style: none;
+            }
+            .wb {
+                color: black !important; 
+                background-color: white
+            }
+            .strong {
+                font-weight: bold;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <h3>Kapitel 3: Alan Turing</h3>
+                    <img data-src="images/slides.png" width="150px"/>
+                </section>
+                <section data-background-image="images/bigpicture.jpg" data-background-opacity="0.2">
+                    <section>
+                        <h5 class="wb">Was wir bisher besprochen haben</h5>
+                        <p class="bb fragment">Probleme als formale Sprachen</p>
+                        <p class="bb fragment">Algorithmen als DFAs </p>
+                    </section>
+                    <section>
+                        <h5 class="wb">Was wir heute besprechen</h5>
+                        <p class="bb fragment">Es gibt nicht-reguläre Sprachen.</p>
+                        <p class="bb fragment">
+                            Das Pumping-Lemma nutzen wir, um Nicht-Regularität zu beweisen.
+                        </p>
+                        <p class="bb fragment">Turingmaschinen sind ein weiterer Formalismus.</p>
+                        <p class="bb fragment">
+                            Turingmaschinen sind der berechnungsstärkste (bekannte) Formalismus.
+                        </p>
+                        <p class="bb fragment">
+                            Turingmaschinen sind selbst als formale Sprache darstellbar.
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-image="images/sortiment.jpg">
+                        <h5 class="wb">SORTIMENT</h5>
+                        <p class="bb">
+                            Als Einkaufsmanager:in möchte ich,
+                            dass das Sortiment in allen Filialien identisch ist,
+                            um alle anderen Prozesse darauf ausrichten zu können. 
+                        </p>
+                    </section>
+                    <section data-background-image="images/sortiment.jpg">
+                        <h5 class="wb">SORTIMENT</h5>
+                        <p class="bb fragment">
+                        $\{0^n1^m|n,m \in \mathbb{N} \wedge n = m\}$
+                        </p>
+                        <p class="bb fragment">
+                        Diese formale Sprache ist nicht-regulär!
+                        </p>
+                    </section>
+                    <section>
+                        <h5 class="wb">Blaupause Beweise Nicht-Regularität mit Pumping-Lemma</h5>
+                        <p class="bb fragment">Sei ein beliebiges $n$ gegeben.</p>
+                        <p class="bb fragment">Wähle ein Wort $x \in L$ mit $|x| \geq n$.</p>
+                        <p class="bb fragment">
+                            Nimm an,
+                            dass alle Bedingungen bis auf die Pumping-Bedingung wahr sind.
+                        </p>
+                        <p class="bb fragment">
+                            Zeige, dass es ein $i \in \mathbb{N}$ gibt,
+                            für das gilt: $uv^iw \notin L$
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h5 class="wb">Alan Turing</h5>
+                        <img data-src="images/turing.jpg" width="400px"/>
+                        <aside class="notes">
+                            <p>Turing-Test</p>
+                            <p>Turing-Bombe</p>
+                            <p>Turing-Award</p>
+                            <p>1952 Kastration, 1954 Selbstmord</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <p class="fragment bb">
+                            Eine Turingmaschine ist ein 5-Tupel 
+                            $[Z, \Sigma, \Gamma, \delta, z_i, \square, E]$
+                        </p>
+                        <p class="fragment bb">$Z$: Zustände</p>
+                        <p class="fragment bb">$\Sigma$: Eingabealphabet</p>
+                        <p class="fragment bb">$\Gamma$: Arbeitsalphabet</p>
+                        <p class="fragment bb">$\delta$: Übergangsfunktion</p>
+                        <p class="fragment bb">$z_i$: Anfangszustand</p>
+                        <p class="fragment bb">$\square$: Blank</p>
+                        <p class="fragment bb">$E$: Endzustände</p>
+                    </section>
+                    <aside class="notes">Tafel: Aufschreiben</aside>
+                    <section>
+                        <p class="wb">Schnappschuss</p>
+                    </section>
+                    <section>
+                        <p class="wb">Schnappschussfolge</p>
+                        <p class="fragment bb">
+                            Folge von Schnappschüssen, die sich aus $\delta$ ergebt.
+                        </p>
+                    </section>
+                    <section>
+                        <p class="wb">Lauf</p>
+                    </section>
+                    <section>
+                        <p class="wb">Turing-berechenbar</p>
+                        <p class="bb fragment">
+                            Ein Problem ist genau dann Turing-Berechenbar,
+                            wenn eine Formale Sprache, die das Problem repräsentiert,
+                            von einer Turingmaschine erkannt wird.
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <h5>Nachbereitung</h5>
+                    <ul>
+                        <li>Kapitel 3 in Skript</li>
+                        <li>Aufgaben aus Kapitel 3</li>
+                    </ul>
+                </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>

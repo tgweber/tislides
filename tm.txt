@@ -1,0 +1,57 @@
+//https://turingmachinesimulator.com/
+//LOAD AN EXAMPLE TO TRY
+//then load an input and click play
+
+//Syntax:
+
+//-------CONFIGURATION
+name: SORTIMENT
+init: z_i
+accept: z_a
+
+//-------DELTA FUNCTION:
+z_i,0
+z_1,_,>
+
+z_1,0
+z_1,0,>
+
+z_1,1
+z_2,1,>
+
+z_2,1
+z_2,1,>
+
+z_2,_
+z_3,_,<
+
+z_3,1
+z_4,_,<
+
+z_4,_
+z_a,_,-
+
+z_4,1
+z_5,1,<
+
+z_5,1
+z_5,1,<
+
+z_5,0
+z_6,0,<
+
+z_6,0
+z_6,0,<
+
+z_6,_
+z_i,_,>
+
+// < = left
+// > = right
+// - = hold
+// use underscore for blank cells
+
+//States and symbols are case-sensitive
+
+//Load your code and click COMPILE.
+//or load an example (top-right).
