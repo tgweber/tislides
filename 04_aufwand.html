@@ -78,8 +78,8 @@
                     <p class="bb fragment">Ist die Sprache unendlich?</p>
                     <p class="bb fragment">Worst Case ist nicht bestimmbar!</p>
                     <p class="bb fragment">Lösung: Verhältnis Inputlänge zu Laufzeit</p>
-                    <p class="bb fragment">$t_{tm}: \mathbb{N} \rightarrow \mathbb{N}</p>
-                    <p class="bb fragment">$t_{tm}(n) = max({\tau(w, tm)| |w| = n})$</p>
+                    <p class="bb fragment">$t_{tm}: \mathbb{N} \rightarrow \mathbb{N}$</p>
+                    <p class="bb fragment">$t_{tm}(n) = max(\{\tau(w, tm)| |w| = n\})$</p>
                 </section>
                 <section>
                     <h5>Für ein Problem</h5>
@@ -95,7 +95,7 @@
                 <section>
                     <h5>Big-O-Notation</h5>
                     <p class="bb fragment">Idee: Alle Funktionen f, die nicht wesentlich schneller als eine Funktion g wachsen</p>
-                    <p class="bb fragment">$O(g(n)) = \{f|\forall c \exists n_0 \forall n (n \geq n_0 \rightarrow f(n) \leq c \cdot g(n))\}$</p>
+                    <p class="bb fragment">$O(g(n)) = \{f|\exists c \exists n_0 \forall n (n \geq n_0 \rightarrow f(n) \leq c \cdot g(n))\}$</p>
                 </section>
                 <section>
                     <h5>Typische oberen Schranken</h5>
@@ -104,9 +104,8 @@
                     <p class="bb fragment">linear: $O(n)$</p>
                     <p class="bb fragment">quadratisch: $O(n^2)$</p>
                     <p class="bb fragment">kubisch: $O(n^3)$</p>
-                    <p class="bb fragment">polynomiell: $O(n^k) k \in \mathbb{N}$</p>
+                    <p class="bb fragment">polynomiell: $O(n^k), k \in \mathbb{N}$</p>
                     <p class="bb fragment">exponentiell: $O(2^n)$</p>
-                    <p class="bb fragment">faktoriell“: $O(n!)$</p>
                 </section>
                 <section>
                     <h5>Warum nicht einfach Messen?</h5>
