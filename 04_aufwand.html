@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>TheoInf</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+        <style>
+            .muchtext {
+                font-size: 20px;
+            }
+            .leftimage {
+                float: left;
+                margin: 0 15px 0 0;
+                width: 250px;
+            }
+            .bb {
+                background-color: #191919;
+                list-style: none;
+            }
+            .wb {
+                color: black !important; 
+                background-color: white
+            }
+            .strong {
+                font-weight: bold;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <h3>Kapitel 4: Aufwand</h3>
+                    <img data-src="images/slides.png" width="150px"/>
+                </section>
+                <section data-background-image="images/bigpicture.jpg" data-background-opacity="0.2">
+                    <section>
+                        <h5 class="wb">Was wir bisher besprochen haben</h5>
+                        <p class="bb fragment">Probleme als formale Sprachen</p>
+                        <p class="bb fragment">Algorithmen als DFAs </p>
+                        <p class="bb fragment">Algorithmen als TM </p>
+                    </section>
+                    <section>
+                        <h5 class="wb">Was wir heute besprechen</h5>
+                        <p class="bb fragment">Was ist Aufwand?</p>
+                        <p class="bb fragment">Wort, Sprache, Problem</p>
+                        <p class="bb fragment">Aufwandsklassen</p>
+                    </section>
+                </section>
+                <section>
+                    <h5>Was ist Aufwand?</h5>
+                    <p class="bb fragment">Zeit</p>
+                    <p class="bb fragment">(Space)</p>
+                </section>
+                <section>
+                    <h5>Für ein Wort</h5>
+                    <p class="bb fragment">Gegegben: TM &amp; w</p>
+                    <p class="bb fragment">Länge des Laufes (Anzahl der Schnappschüsse)</p>
+                    <p class="bb fragment">$\tau: \Sigma^* \times TM \rightarrow \mathbb{N}$</p>
+                    <p class="bb fragment">$\tau(w, tm) = length(l_{w,tm})$</p>
+                </section>
+                <section>
+                    <h5>Für eine Sprache</h5>
+                    <p class="bb fragment">Best Case</p>
+                    <p class="bb fragment">Average Case</p>
+                    <p class="bb fragment">Worst Case</p>
+                </section>
+                <section>
+                    <h5>Achtung</h5>
+                    <p class="bb fragment">Ist die Sprache unendlich?</p>
+                    <p class="bb fragment">Worst Case ist nicht bestimmbar!</p>
+                    <p class="bb fragment">Lösung: Verhältnis Inputlänge zu Laufzeit</p>
+                    <p class="bb fragment">$t_{tm}: \mathbb{N} \rightarrow \mathbb{N}</p>
+                    <p class="bb fragment">$t_{tm}(n) = max({\tau(w, tm)| |w| = n})$</p>
+                </section>
+                <section>
+                    <h5>Für ein Problem</h5>
+                    <p class="bb fragment">Alle Algorithmen</p>
+                    <p class="bb fragment">Alle formalen Sprachen?</p>
+                    <p class="bb fragment">Obere oder untere Schranken</p>
+                </section>
+                <section>
+                    <h5>Aufwandsklassen</h5>
+                    <p class="bb fragment">Generelle Idee: Klassifikation anhand der Komplexität</p>
+                    <p class="bb fragment">Klassifikation von Algorithmen, formalen Sprachen, Problemen!</p>
+                </section>
+                <section>
+                    <h5>Big-O-Notation</h5>
+                    <p class="bb fragment">Idee: Alle Funktionen f, die nicht wesentlich schneller als eine Funktion g wachsen</p>
+                    <p class="bb fragment">$O(g(n)) = \{f|\forall c \exists n_0 \forall n (n \geq n_0 \rightarrow f(n) \leq c \cdot g(n))\}$</p>
+                </section>
+                <section>
+                    <h5>Typische oberen Schranken</h5>
+                    <p class="bb fragment">konstant: $O(1)$</p>
+                    <p class="bb fragment">logarithmisch: $O(log n)$</p>
+                    <p class="bb fragment">linear: $O(n)$</p>
+                    <p class="bb fragment">quadratisch: $O(n^2)$</p>
+                    <p class="bb fragment">kubisch: $O(n^3)$</p>
+                    <p class="bb fragment">polynomiell: $O(n^k) k \in \mathbb{N}$</p>
+                    <p class="bb fragment">exponentiell: $O(2^n)$</p>
+                    <p class="bb fragment">faktoriell“: $O(n!)$</p>
+                </section>
+                <section>
+                    <h5>Warum nicht einfach Messen?</h5>
+                    <p class="bb fragment">Aussagekraft eines Experiments (Rauschen)</p>
+                    <p class="bb fragment">Unendliche Menge an Messungen</p>
+                    <p class="bb fragment">Statistische Methoden</p>
+                </section>
+			</div>
+		</div>
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>
