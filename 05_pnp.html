@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>TheoInf</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+        <style>
+            .muchtext {
+                font-size: 20px;
+            }
+            .leftimage {
+                float: left;
+                margin: 0 15px 0 0;
+                width: 250px;
+            }
+            .bb {
+                background-color: #191919;
+                list-style: none;
+            }
+            .wb {
+                color: black !important; 
+                background-color: white
+            }
+            .strong {
+                font-weight: bold;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <h3>Kapitel 5: P und NP</h3>
+                    <img data-src="images/slides.png" width="150px"/>
+                </section>
+                <section data-background-image="images/bigpicture.jpg" data-background-opacity="0.2">
+                    <section>
+                        <h5 class="wb">Was wir bisher besprochen haben</h5>
+                        <p class="bb fragment">Probleme als formale Sprachen</p>
+                        <p class="bb fragment">Algorithmen als DFAs </p>
+                        <p class="bb fragment">Algorithmen als TM</p>
+                        <p class="bb fragment">Aufandsquantifikation</p>
+                    </section>
+                    <section>
+                        <h5 class="wb">Was wir heute besprechen</h5>
+                        <p class="bb fragment">Effizient-lösbare Probleme: P</p>
+                        <p class="bb fragment">Nicht-Determinismus</p>
+                        <p class="bb fragment">NP</p>
+                        <p class="bb fragment">P = NP?</p>
+                    </section>
+                </section>
+                <section>
+                    <h3>Die Komplexitätsklasse P</h3>
+                    <section>
+                        <p class="bb fragment">
+                        TM mit $t_{TM} \in O(n^k)$ mit $k \in \mathbb{N}$</p>
+                    </section>
+                    <section>
+                        <h5>Noch in P:</h5>
+                        <p class="bb fragment">
+                            Probleme, die von Mehrbandturingmaschinen erkannt werden.
+                        </p>
+                        <p class="bb fragment">
+                        Eine k-Band TM $tm_k$
+                        kann von einer 1-Band T
+                        in $5k \cdot t_{tm_k}(n)^2$ simuliert werden.
+                        </p>
+                    </section>
+                    <section>
+                        <h5>Noch in P:</h5>
+                        <p class="bb fragment">
+                            Probleme mit $|\Sigma| > 2$
+                        </p>
+                        <p class="bb fragment">
+                        Eine TM $tm^{'}$ über $\Sigma^{'}$ 
+                        kann von einer kanonischen TM
+                        in $4 \cdot log(|\Sigma^{'}|) \cdot t_{tm^{'}}(n)$ simuliert werden.
+                        </p>
+                    </section>
+                    <section>
+                        <h5>Nicht mehr in P?</h5>
+                        <p class="bb fragment">
+                            Probleme mit einem $2^n$-großen Lösungsraum
+                        </p>
+                        <p class="bb fragment">
+                            Brute-Force Algorithmus:<br/>
+                            Probiere alle Kombinationen durch
+                        </p>
+                        <aside class="notes">Binäre Belegungen (Tafel), Potenzmenge</aside>
+                    </section>
+                </section>
+                <section>
+                    <h3>Nicht-Determinismus</h3>
+                    <section>
+                        <p class="bb fragment">NFA</p>
+                        <p class="bb fragment">NTM</p>
+                        <p class="bb fragment">Realisierbarkeit</p>
+                    </section>
+                    <section>
+                        <h5>NFA und DFA</h5>
+                        <p class="bb fragment">Potenzmengen-Konstruktion</p>
+                    </section>
+                    <section>
+                        <h5>NTM und Lauflänge</h5>
+                        <p>Glückliches Raten</p>
+                    </section>
+                    <section>
+                        <h5>NTM und Quantencomputer</h5>
+                    </section>
+                </section>
+                <section>
+                    <h5>NP</h5>
+                    <p class="bb fragment">DTM mit $t_{DTM} \in O(n^k)$ mit $k \in \mathbb{N}$</p>
+
+                </section>
+                <section>
+                    <h5>Komplexitätstheoretische Reduktion</h5>
+                </section>
+                <section>
+                    <h5>NP-Schwere</h5>
+                </section>
+                <section>
+                    <h5>NP-Vollständigkeit</h5>
+                </section>
+                <section>
+                    <h5>SAT</h5>
+                </section>
+                <section>
+                    <h5>Reduktionsbaum</h5>
+                </section>
+                <section>
+                    <h5>P = NP?</h5>
+                </section>
+			</div>
+		</div>
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>
