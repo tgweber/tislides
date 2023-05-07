@@ -98,11 +98,12 @@
                     </section>
                 </section>
                 <section>
-                    <h3>Nicht-Determinismus</h3>
                     <section>
+                        <h3>Nicht-Determinismus</h3>
+                        <img data-src="images/non-det.png"/>
                         <p class="bb fragment">NFA</p>
                         <p class="bb fragment">NTM</p>
-                        <p class="bb fragment">Realisierbarkeit</p>
+                        <aside class="notes">Realisierbarkeit</aside>
                     </section>
                     <section>
                         <h5>NFA und DFA</h5>
@@ -110,34 +111,83 @@
                     </section>
                     <section>
                         <h5>NTM und Lauflänge</h5>
-                        <p>Glückliches Raten</p>
-                    </section>
-                    <section>
-                        <h5>NTM und Quantencomputer</h5>
+                        <p class="bb fragment">Glückliches Raten</p>
+                        <aside class="notes">NTM und Quantencomputer</aside>
                     </section>
                 </section>
                 <section>
                     <h5>NP</h5>
                     <p class="bb fragment">DTM mit $t_{DTM} \in O(n^k)$ mit $k \in \mathbb{N}$</p>
-
-                </section>
-                <section>
-                    <h5>Komplexitätstheoretische Reduktion</h5>
-                </section>
-                <section>
-                    <h5>NP-Schwere</h5>
-                </section>
-                <section>
-                    <h5>NP-Vollständigkeit</h5>
-                </section>
-                <section>
-                    <h5>SAT</h5>
-                </section>
-                <section>
-                    <h5>Reduktionsbaum</h5>
                 </section>
                 <section>
                     <h5>P = NP?</h5>
+                    <p class="bb fragment">Es gilt: $P \subseteq NP$</p>
+                    <p class="bb fragment">Möglichkeit 1:<br/>$P \subsetneq NP$</p>
+                    <p class="bb fragment">Möglichkeit 2:<br/>$P = NP$</p>
+                </section>
+                <section>
+                    <h5>Komplexitätstheoretische Reduktion</h5>
+                    <p class="bb fragment">$A \subseteq \Sigma^*$ und $N \subseteq \Gamma^*$</p>
+                    <p class="bb fragment">
+                        $A$ polynomial reduzierbar auf $B$: $A \leq_{p} B$
+                    </p>
+                    <p class="bb fragment">
+                    $\exists TM$ mit $t_{TM}(n) \in O(n^k)$, $k \in \mathbb{N}$
+                    </p>
+                    <p class="bb fragment">
+                    TM erkennt Sprache $\{wx|w \in A \wedge x \in B\}$ 
+                    </p>
+                    <p class="bb fragment">
+                    TM stellt sicher: $w \in A \leftrightarrow f_{TM}(w) \in B$
+                    </p>
+                </section>
+                <section>
+                    <h5>NP-Schwere</h5>
+                    <p class="bb fragment">
+                    $A$ ist NP-schwer gdw:
+                    </p>
+                    <p class="bb fragment">
+                    Für alle $L \in NP$: $L \leq_{p} A$ 
+                    </p>
+                    <aside class="notes">Kein Problem in NP ist schwerer als A</aside>
+                </section>
+                <section>
+                    <h5>NP-Vollständigkeit</h5>
+                    <p class="bb fragment">
+                    $A$ ist NP-vollständig gdw:
+                    </p>
+                    <p class="bb fragment">
+                    $A$ ist NP-schwer und $A \in NP$
+                    </p>
+                    <aside class="notes">A ist eines der schwersten Probleme in NP</aside>
+                </section>
+                <section>
+                    <h5>SAT</h5>
+                    <p class="bb fragment">
+                    Gegeben: Eine Formel F der Aussagenlogik 
+                    </p>
+                    <p class="bb fragment">
+                    Gesucht: Ist F erfüllbar?
+                    </p>
+                    <p class="bb fragment">
+                    SAT ist NP-vollständig
+                    </p>
+                    <aside class="notes">
+                        Beweise, dass SAT in NP ist.
+                        Beweise, dass alle NP-Probleme maximal so schwer sind, wie SAT.
+                        Kodiere beliebige NTM als Aussagenlogische Formel
+                </section>
+                <section>
+                    <h5>Reduktionsbaum</h5>
+                    <img data-src="images/nptree.jpg"/>
+                </section>
+                <section data-background-image="images/route.png">
+                    <p class="bb">
+                        Als Logistiker:in möchte ich,
+                        dass morgens die optimalen Routen für die LKWs
+                        in die 24 Filialen berechnet werden,
+                        um die Lieferzeit zu minimieren.
+                    </p>
                 </section>
 			</div>
 		</div>
