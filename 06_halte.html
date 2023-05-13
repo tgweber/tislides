@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>TheoInf</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+        <style>
+            .muchtext {
+                font-size: 20px;
+            }
+            .leftimage {
+                float: left;
+                margin: 0 15px 0 0;
+                width: 250px;
+            }
+            .bb {
+                background-color: #191919;
+                list-style: none;
+            }
+            .wb {
+                color: black !important; 
+                background-color: white
+            }
+            .strong {
+                font-weight: bold;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <h3>Kapitel 6: Unberechenbarkeit</h3>
+                    <img data-src="images/slides.png" width="150px"/>
+                </section>
+                <section data-background-image="images/bigpicture.jpg" data-background-opacity="0.2">
+                    <section>
+                        <h5 class="wb">Was wir bisher besprochen haben</h5>
+                        <p class="bb fragment">Probleme als formale Sprachen</p>
+                        <p class="bb fragment">Algorithmen als DFAs </p>
+                        <p class="bb fragment">Algorithmen als TM</p>
+                        <p class="bb fragment">Aufandsquantifikation</p>
+                        <p class="bb fragment">Komplexität: P und NP</p>
+                    </section>
+                    <section>
+                        <h5 class="wb">Was wir heute besprechen</h5>
+                        <p class="bb fragment">Nicht-lösbare Probleme</p>
+                        <p class="bb fragment">Arbeitsblatt</p>
+                    </section>
+                </section>
+                <section data-background-image="images/barber.jpg">
+                    <section>
+                        <p class="bb">
+                        Carlos rasiert alle Sevillanos,<br/>die sich nicht selbst rasieren.
+                        </p>
+                        <p class="bb fragment">Ist Carlos ein Sevillano?</p>
+                    </section>
+                    <section>
+                        <p class="bb fragment">"Interessante" Relation</p>
+                        <p class="bb fragment">Selbstbbezug</p>
+                        <p class="bb fragment">Negation</p>
+                    </section>
+                </section>
+                <section data-background-image="images/liar.jpg">
+                    <p class="bb fragment">Lügner: "Annie tanzt."</p>
+                    <p class="bb fragment">Lügner: "Annie sagt die Wahrheit."</p>
+                    <p class="bb fragment">Lügner: "Annie lügt."</p>
+                    <p class="bb fragment">Lügner: "Ich lüge."</p>
+                </section>
+                <section>
+                    <h5 class="wb">Naive Mengenlehre</h5>
+                    <p class="fragment bb">$\{x | \phi(x)\}$</p>
+                    <p class="fragment bb">$\{x | x \notin x\}$</p>
+                </section>
+                <section>
+                    <h5 class="wb">Grundüberlegungen</h5>
+                    <p class="fragment bb">
+                        Mächtigster Berechenbarkeitsbegriff:<br/>
+                        Turing-Berechenbarkeit
+                    </p>
+                    <p class="fragment bb">
+                        Turingmaschinen lassen sich kodieren.
+                    </p>
+                    <p class="fragment bb">
+                        Turingmaschinen können Input für andere Turingmaschinen sein. 
+                    </p>
+                    <p class="fragment bb">
+                        Turingmaschinen,
+                        die "interessante" Eigenschaften bei anderen Turingmaschinen prüfen.
+                    </p>
+                </section>
+                <section>
+                    <h5 class="wb">Das Problem LIAR</h5>
+                    <p class="fragment bb">
+                        Gegeben: eine Turingmaschine $M$
+                    </p>
+                    <p class="fragment bb">
+                        Gesucht: 0, wenn Output von $M$ 1 ist, 0 sonst.
+                    </p>
+                    <p class="fragment bb">
+                        Annahme: Es gibt eine TM $M_L$, die LIAR erkennt. 
+                    </p>
+                    <p class="fragment bb">
+                        Widerspruch!
+                    </p>
+                </section>
+                <section data-background-image="images/halt.jpg">
+                    <p class="bb">
+                        Als Product Owner:in des Serverless-Computings möchte ich,
+                        dass nur terminierende Code-Snippets deployt werden,
+                        um die verfügbaren Ressourcen effizient zu nutzen.
+                    </p>
+                </section>
+                <section>
+                    <h5 class="wb">Das Problem HALT</h5>
+                    <p class="fragment bb">
+                        Gegeben: eine Turingmaschine $M$
+                    </p>
+                    <p class="fragment bb">
+                        Gesucht: 0, wenn $M$ hält, 0 sonst.
+                    </p>
+                </section>
+                <section>
+                    <h5 class="wb">Berechnungstheoeretische Reduktion</h5>
+                </section>
+                <section>
+                    <p class="bb">Das Problem HALT ist nicht berechenbar</p>
+                </section>
+                <section>
+                    <h5 class="wb">Hausaufgabe</h5>
+                    <p class="bb"><a href="uebungsblatt.pdf">Arbeitsblatt</a></p>
+                </section>
+
+			</div>
+		</div>
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>
