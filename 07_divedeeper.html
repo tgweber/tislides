@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>TheoInf</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+        <style>
+            .muchtext {
+                font-size: 20px;
+            }
+            .leftimage {
+                float: left;
+                margin: 0 15px 0 0;
+                width: 250px;
+            }
+            .bb {
+                background-color: #191919;
+                list-style: none;
+            }
+            .wb {
+                color: black !important; 
+                background-color: white
+            }
+            .strong {
+                font-weight: bold;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <h3>Kapitel 7/8: Dive Deeper</h3>
+                    <img data-src="images/slides.png" width="150px"/>
+                </section>
+                <section data-background-image="images/bigpicture.jpg" data-background-opacity="0.2">
+                    <section>
+                        <h5 class="wb">Was wir bisher besprochen haben</h5>
+                        <p class="bb fragment">Probleme als formale Sprachen</p>
+                        <p class="bb fragment">Algorithmen als DFAs </p>
+                        <p class="bb fragment">Algorithmen als TM</p>
+                        <p class="bb fragment">Aufandsquantifikation</p>
+                        <p class="bb fragment">Komplexität: P und NP</p>
+                        <p class="bb fragment">Unberechenbarkeit: Das Halteproblem</p>
+                    </section>
+                    <section>
+                        <h5 class="wb">Was wir heute besprechen</h5>
+                        <p class="bb fragment">Arbeitsblatt (Lösung)</p>
+                        <p class="bb fragment">Keller-Automaten</p>
+                        <p class="bb fragment">Grammatiken</p>
+                        <p class="bb fragment">Chomsky-Hierachie</p>
+                    </section>
+                </section>
+                <section>
+                    <h5 class="wb">Keller-Automaten</h5>
+                    <section>
+                        <p class="bb">
+                            Idee: Anderer Speichertyp (Push-down)<br/>
+                            Englisch: Push-Down Automaton (PDA)
+                        </p>
+                    </section>
+                    <section>
+                        <aside class="notes">Zeichnung mit Keller anstatt Band</aside>
+                        <p class="bb fragment">Nicht-Deterministischer Kellerautomat</p>
+                        <p class="bb fragment">$K = [\Sigma, Z, \Gamma, \delta, z_0, \#]$</p>
+                        <p class="bb fragment">$\Gamma$ = Kelleralphabet</p>
+                        <p class="bb fragment">$\delta: Z \times (\Sigma \cup \{\epsilon\}) \times \Gamma \rightarrow \mathcal(P)_e(Z \times \Gamma^*)$</p>
+                        <p class="bb fragment">$\#$: Kellerende</p>
+                    </section>
+                    <section>
+                        <p class="bb fragment">Kontextfreie Sprachen</p>
+                        <p class="bb fragment">Werden von einem PDA erkannt</p>
+                    </section>
+                    <section>
+                        <p class="bb fragment">Determinismus?</p>
+                        <p class="bb fragment">Deterministischer PDA</p>
+                        <p class="bb fragment">Deterministisch Kontextfreie Sprachen:<br/>
+                        Echte Teilmenge von Kontextfreien Sprachen</p>
+                        <aside class="notes">Übergangsfunktion muss terministisch sein. Akzeptanz mit Endzuständen (oder leerem Keller).</aside>
+                    </section>
+                    <section>
+                        <p class="bb fragment">Rolle der Kontextfreien Sprachen</p>
+                        <p class="bb fragment">Compilerbau</p>
+                        <p class="bb fragment">Linguistik</p>
+                    </section>
+                </section>
+                <section>
+                    <h5 class="wb">Grammatiken</h5>
+                    <section>
+                        <p class="bb fragment">Bisher: Akzeptoren</p>
+                        <p class="bb fragment">Grammatiken sind Generatoren</p>
+                    </section>
+                    <section>
+                        <p class="bb fragment">Formale Definition</p>
+                        <p class="bb fragment">$G = [\Sigma, V, P, S]$</p>
+                        <p class="bb fragment">$V$: Variablen</p>
+                        <p class="bb fragment">$P$: Produktionen (Regeln)</p>
+                        <p class="bb fragment">$S$: Startvariable</p>
+                    </section>
+                    <section>
+                        <p class="bb fragment">Beispiel-Grammatik</p>
+                        <p class="bb fragment">$G = [\Sigma, V, P, S]$</p>
+                        <p class="bb fragment">$\Sigma = \{0,1\}$</p>
+                        <p class="bb fragment">$V = \{S\}$</p>
+                        <p class="bb fragment">$P =\{S \rightarrow \epsilon, S \rightarrow 01, S \rightarrow 0S1 \}$</p>
+                    </section>
+                </section>
+                <section>
+                    <h5 class="wb">Chomsky-Hierarchie</h5>
+                    <section>
+                        <p class="bb fragment">Idee: Ordnung der formalen Sprachen</p>
+                    </section>
+                    <section>
+                        <p class="bb fragment">Alle Grammatiken<br/>
+                        sind vom <strong>Typ 0.</strong></p>
+                        <p class="bb fragment">Die Grammatiken und erzeugten Sprachen nennt man <em>rekursiv aufzählbar</em>.</p>
+                    </section>
+                    <section>
+                        <p class="bb fragment">Alle Grammatiken<br/>
+                        die vom Typ 0 sind und für deren Produktionen $w_1 \rightarrow w_2$ gilt:</br>
+                        $|w_1| \leq |w_2|$ </br>
+                        sind vom <strong>Typ 1</strong>.</p>
+                        <p class="bb fragment">Die Grammatiken und erzeugten Sprachen nennt man <em>kontextsensitiv</em>.</p>
+                    </section>
+                    <section>
+                        <p class="bb fragment">Alle Formalen Sprachen,<br/>
+                        die vom Typ 1 sind und für deren Produktionen $w_1 \rightarrow w_2$ gilt:</br>
+                        $|w_1| \in V$ </br>
+                        sind vom <strong>Typ 2</strong>.</p>
+                        <p class="bb fragment">Die Grammatiken und erzeugten Sprachen nennt man <em>kontextfrei</em>.</p>
+                    </section>
+                    <section>
+                        <p class="bb fragment">Alle Formalen Sprachen,<br/>
+                        die vom Typ 2 sind und für deren Produktionen $w_1 \rightarrow w_2$ gilt:</br>
+                        $|w_2| \in \Sigma \cup \Sigma{}V$ </br>
+                        sind vom <strong>Typ 3</strong>.</p>
+                        <p class="bb fragment">Die Grammatiken und erzeugten Sprachen nennt man <em>regulär</em>.</p>
+                    </section>
+                    <section>
+                        <p class="bb fragment">Es gilt:</p>
+                        <p class="bb fragment">Typ 0 $\subsetneq$ Typ 1 $\subsetneq$ Typ 2 $\subsetneq$ Typ 3</p>
+                    </section>
+                    <section>
+                        <p class="bb fragment">Zuordnung zu Automaten</p>
+                        <p class="bb fragment">Typ 0 (rekursiv aufzählbar):<br/> Turingmaschinen</p>
+                        <p class="bb fragment">Typ 1 (kontext-sensitiv):<br/> linear-beschränkte Turingmaschinen</p>
+                        <p class="bb fragment">Typ 2 (kontextfrei):<br/> Nicht-deterministische Kellerautomaten</p>
+                        <p class="bb fragment">Typ 3 (regulär):<br/> (Nicht-)Deterministische Finite Automaten</p>
+                    </section>
+                </section>
+			</div>
+		</div>
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>
