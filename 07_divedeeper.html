@@ -59,20 +59,19 @@
                         <p class="bb fragment">Chomsky-Hierachie</p>
                     </section>
                 </section>
-                <section>
+                <section data-background-image="images/stack.jpg" data-background-opacity="0.7">
                     <h5 class="wb">Keller-Automaten</h5>
                     <section>
-                        <p class="bb">
-                            Idee: Anderer Speichertyp (Push-down)<br/>
-                            Englisch: Push-Down Automaton (PDA)
-                        </p>
+                        <p class="bb fragment">Idee: Anderer Speichertyp</p>
+                        <p class="bb fragment">LIFO-Speicher: Stack, Keller</p>
+                        <p class="bb fragment">Englisch: Push-Down Automaton (PDA)</p>
                     </section>
                     <section>
                         <aside class="notes">Zeichnung mit Keller anstatt Band</aside>
                         <p class="bb fragment">Nicht-Deterministischer Kellerautomat</p>
                         <p class="bb fragment">$K = [\Sigma, Z, \Gamma, \delta, z_0, \#]$</p>
-                        <p class="bb fragment">$\Gamma$ = Kelleralphabet</p>
-                        <p class="bb fragment">$\delta: Z \times (\Sigma \cup \{\epsilon\}) \times \Gamma \rightarrow \mathcal(P)_e(Z \times \Gamma^*)$</p>
+                        <p class="bb fragment">$\Gamma$ = Kelleralphabet ($\Sigma \subsetneq \Gamma$)</p>
+                        <p class="bb fragment">$\delta: Z \times (\Sigma \cup \{\epsilon\}) \times \Gamma \rightarrow \mathcal{P}_e(Z \times \Gamma^*)$</p>
                         <p class="bb fragment">$\#$: Kellerende</p>
                     </section>
                     <section>
@@ -92,7 +91,7 @@
                         <p class="bb fragment">Linguistik</p>
                     </section>
                 </section>
-                <section>
+                <section data-background-image="images/grammar.jpg">
                     <h5 class="wb">Grammatiken</h5>
                     <section>
                         <p class="bb fragment">Bisher: Akzeptoren</p>
@@ -113,7 +112,7 @@
                         <p class="bb fragment">$P =\{S \rightarrow \epsilon, S \rightarrow 01, S \rightarrow 0S1 \}$</p>
                     </section>
                 </section>
-                <section>
+                <section data-background-image="images/hierarchy.jpg">
                     <h5 class="wb">Chomsky-Hierarchie</h5>
                     <section>
                         <p class="bb fragment">Idee: Ordnung der formalen Sprachen</p>
@@ -133,14 +132,14 @@
                     <section>
                         <p class="bb fragment">Alle Formalen Sprachen,<br/>
                         die vom Typ 1 sind und für deren Produktionen $w_1 \rightarrow w_2$ gilt:</br>
-                        $|w_1| \in V$ </br>
+                        $w_1 \in V$ </br>
                         sind vom <strong>Typ 2</strong>.</p>
                         <p class="bb fragment">Die Grammatiken und erzeugten Sprachen nennt man <em>kontextfrei</em>.</p>
                     </section>
                     <section>
                         <p class="bb fragment">Alle Formalen Sprachen,<br/>
                         die vom Typ 2 sind und für deren Produktionen $w_1 \rightarrow w_2$ gilt:</br>
-                        $|w_2| \in \Sigma \cup \Sigma{}V$ </br>
+                        $w_2 \in \Sigma \cup \Sigma{}V$ </br>
                         sind vom <strong>Typ 3</strong>.</p>
                         <p class="bb fragment">Die Grammatiken und erzeugten Sprachen nennt man <em>regulär</em>.</p>
                     </section>
