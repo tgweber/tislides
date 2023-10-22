@@ -55,10 +55,10 @@
                         </p>
                         <p class="bb fragment">Turingmaschinen sind ein weiterer Formalismus.</p>
                         <p class="bb fragment">
-                            Turingmaschinen sind der berechnungsstärkste (bekannte) Formalismus.
+                            Mehrband-Turingmaschinen sind nicht berechnungsstärker als Einband-TMs. 
                         </p>
                         <p class="bb fragment">
-                            Turingmaschinen sind selbst als formale Sprache darstellbar.
+                            Turingmaschinen sind der berechnungsstärkste (bekannte) Formalismus.
                         </p>
                     </section>
                 </section>
@@ -106,6 +106,7 @@
                         </aside>
                     </section>
                     <section>
+                        <div class="muchtext">
                         <p class="fragment bb">
                             Eine Turingmaschine ist ein 7-Tupel 
                             $[Z, \Sigma, \Gamma, \delta, z_i, \square, E]$
@@ -113,12 +114,20 @@
                         <p class="fragment bb">$Z$: Zustände</p>
                         <p class="fragment bb">$\Sigma$: Eingabealphabet</p>
                         <p class="fragment bb">$\Gamma$: Arbeitsalphabet</p>
-                        <p class="fragment bb">$\delta$: Übergangsfunktion</p>
+                        <p class="fragment bb">$\delta: \Gamma \times Z \rightarrow Z \times \Gamma \times \{R,L,N\}$<br/>(Übergangsfunktion) </p>
                         <p class="fragment bb">$z_i$: Anfangszustand</p>
                         <p class="fragment bb">$\square$: Blank</p>
                         <p class="fragment bb">$E$: Endzustände</p>
+                        </div>
                     </section>
-                    <aside class="notes">Tafel: Aufschreiben</aside>
+                    <section>
+                        <p class="bb">
+                            Kann eine Turingmaschine SORTIMENT berechnen? 
+                        </p>
+                        <p class="bb">
+                            $\{0^n1^m|n,m \in \mathbb{N} \wedge n = m\}$
+                        </p>
+                    </section>
                     <section>
                         <p class="wb">Schnappschuss</p>
                         $[z,u,v,w]$
@@ -152,6 +161,30 @@
                             wenn eine formale Sprache, die das Problem repräsentiert,
                             von einer Turingmaschine erkannt wird.
                         </p>
+                    </section>
+                    <section>
+                        <p class="wb">Church-Turing-These</p>
+                        <p class="bb fragment">
+                            Alle Probleme, die <em>intuitiv</em> berechenbar sind,<br/>
+                            lassen sich von einer formalen Sprache repräsentieren,
+                            die <em>Turing-berechenbar</em> ist.
+                        </p>
+                    </section>
+                    <section>
+                        <p class="wb">Mehrband Turingmaschinen</p>
+                        <p class="bb">
+                            Wie "einfache" Turingmaschine, nur mit $k$ Bändern und mit: 
+                        <p class="bb fragment">
+                            $\delta: \Gamma^k \times Z \rightarrow Z \times \Gamma^k \times \{R,L,N\}^k$<br/>(Übergangsfunktion) </p>
+                        <p class="bb fragment">Nicht berechnungsstärker als Einband-TM!</p>
+                    </section>
+                    <section>
+                        <p class="wb">Turingmaschinen und Programmiersprachen</p>
+                        <p class="bb fragment">Variablen: Bandinhalte</p>
+                        <p class="bb fragment">Wertzuweisung: Kopieren von Bandinhalten</p>
+                        <p class="bb fragment">Statement-Folgen: TMs hintereinander schalten</p>
+                        <p class="bb fragment">Verzweigungen: TMs bedingt hintereinander schalten</p>
+                        <p class="bb fragment">Loops: TM bedingt durch Bandinhalt wiederholen</p>
                     </section>
                     <section>
                         <h5 class="wb">Turing-vollständige Formalismen</h5>
