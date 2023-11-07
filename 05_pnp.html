@@ -66,7 +66,8 @@
                     <section>
                         <h5>Noch in P:</h5>
                         <p class="bb fragment">
-                            Probleme, die von Mehrbandturingmaschinen erkannt werden.
+                            Probleme, die von Mehrbandturingmaschinen in polynomieller Zeit
+                            erkannt werden.
                         </p>
                         <p class="bb fragment">
                         Eine k-Band TM $tm_k$
@@ -77,12 +78,12 @@
                     <section>
                         <h5>Noch in P:</h5>
                         <p class="bb fragment">
-                            Probleme mit $|\Sigma| > 2$
+                            Probleme, die von einer Einband-TM mit $|\Sigma| > 2$ erkannt werden.
                         </p>
                         <p class="bb fragment">
                         Eine TM $tm^{'}$ über $\Sigma^{'}$ 
                         kann von einer kanonischen TM
-                        in $4 \cdot log(|\Sigma^{'}|) \cdot t_{tm^{'}}(n)$ simuliert werden.
+                        in $4 \cdot log(|\Sigma|) \cdot t_{tm^{'}}(n)$ simuliert werden.
                         </p>
                     </section>
                     <section>
@@ -101,13 +102,21 @@
                     <section>
                         <h3>Nicht-Determinismus</h3>
                         <img data-src="images/non-det.png"/>
-                        <p class="bb fragment">NFA</p>
-                        <p class="bb fragment">NTM</p>
-                        <aside class="notes">Realisierbarkeit</aside>
+                        <p class="bb fragment">NFA = $[\Sigma, Z,\delta,S,E]$</p>
+                        <p class="bb fragment">$S \subseteq Z$;
+                        $\delta: \Sigma \times Z \rightarrow \mathcal{P}(Z)$</p>
+                    </section>
+                    <section>
+                        <h3>Nicht-Determinismus</h3>
+                        <img data-src="images/non-det.png"/>
+                        <p class="bb fragment">NTM = $[Z, \Sigma,\Gamma, \delta, z_0, \square, E]$</p>
+                        <p class="bb fragment">
+                        $\delta: \Gamma \times Z \rightarrow \mathcal{P}(Z \times \Gamma \times \{R,L,-\})$</p>
                     </section>
                     <section>
                         <h5>NFA und DFA</h5>
                         <p class="bb fragment">Potenzmengen-Konstruktion</p>
+                        <aside class="note">Aufgabe</aside>
                     </section>
                     <section>
                         <h5>NTM und Lauflänge</h5>
@@ -117,7 +126,7 @@
                 </section>
                 <section>
                     <h5>NP</h5>
-                    <p class="bb fragment">DTM mit $t_{DTM} \in O(n^k)$ mit $k \in \mathbb{N}$</p>
+                    <p class="bb fragment">NTM mit $t_{NTM} \in O(n^k)$ mit $k \in \mathbb{N}$</p>
                 </section>
                 <section>
                     <h5>P = NP?</h5>
