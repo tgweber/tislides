@@ -41,20 +41,10 @@
                     <h3>Kapitel 6: Unberechenbarkeit</h3>
                     <img data-src="images/slides.png" width="150px"/>
                 </section>
-                <section data-background-image="images/bigpicture.jpg" data-background-opacity="0.2">
-                    <section>
-                        <h5 class="wb">Was wir bisher besprochen haben</h5>
-                        <p class="bb fragment">Probleme als formale Sprachen</p>
-                        <p class="bb fragment">Algorithmen als DFAs </p>
-                        <p class="bb fragment">Algorithmen als TM</p>
-                        <p class="bb fragment">Aufandsquantifikation</p>
-                        <p class="bb fragment">Komplexität: P und NP</p>
-                    </section>
-                    <section>
-                        <h5 class="wb">Was wir heute besprechen</h5>
-                        <p class="bb fragment">Nicht-lösbare Probleme</p>
-                        <p class="bb fragment">Arbeitsblatt</p>
-                    </section>
+                <section>
+                    <h3>Was ist Berechenbarkeit?</h3>
+                    <p class="bb fragment">Ein Problem ist berechenbar,
+                    wenn es eine TM gibt, die zugehörige formale Sprache erkennt.</p>
                 </section>
                 <section data-background-image="images/barber.jpg">
                     <section>
@@ -90,7 +80,8 @@
                         Turing-Berechenbarkeit
                     </p>
                     <p class="fragment bb">
-                        Turingmaschinen lassen sich kodieren.
+                        Turingmaschinen lassen sich kodieren. 
+                        ($w_M$ steht für den Code für $M$ in einem Wort $w$)
                     </p>
                     <p class="fragment bb">
                         Turingmaschinen können Input für andere Turingmaschinen sein. 
@@ -103,10 +94,10 @@
                 <section>
                     <h5 class="wb">Das Problem LIAR</h5>
                     <p class="fragment bb">
-                        Gegeben: eine Turingmaschine $M$
+                        Gegeben: eine Turingmaschine $M$, mit Input $w_M$.
                     </p>
                     <p class="fragment bb">
-                        Gesucht: 0, wenn Output von $M$ 1 ist, 0 sonst.
+                        Gesucht: 0, wenn Output von $M$ auf $w_M$ 1 ist, 0 sonst.
                     </p>
                     <p class="fragment bb">
                         Annahme: Es gibt eine TM $M_L$, die LIAR erkennt. 
@@ -125,32 +116,27 @@
                 <section>
                     <h5 class="wb">Das Problem HALT</h5>
                     <p class="fragment bb">
-                        Gegeben: eine Turingmaschine $M$
+                        Gegeben: eine kodierte Turingmaschine $w_M$ und ein Input $x$. 
                     </p>
                     <p class="fragment bb">
-                        Gesucht: 0, wenn $M$ hält, 0 sonst.
+                        Gesucht: 1, wenn $M$ mit Input $x$ hält, 0 sonst.
                     </p>
                 </section>
                 <section>
                     <h5 class="wb">Berechnungstheoeretische Reduktion</h5>
                     <p class="fragment bb">
-                        $A \leq B$
+                        $A \leq_B B$
                     </p>
                     <p class="fragment bb">
-                        Wenn A "berechenbar" ist, dann ist auch B berechenbar.
+                        Wenn B berechenbar ist, dann ist auch A berechenbar.
                     </p>
                 </section>
                 <section>
-                    <h5 class="wb">Das Problem HALT ist nicht berechenbar</h5>
+                    <h5 class="wb">Das Problem HALT ist nicht berechenbar!</h5>
                     <p class="bb fragment">
-                        HALT $\leq$ LIAR
+                        LIAR $\leq_B$ HALT
                     </p>
                 </section>
-                <section>
-                    <h5 class="wb">Hausaufgabe</h5>
-                    <p class="bb"><a href="uebungsblatt.pdf">Arbeitsblatt</a></p>
-                </section>
-
 			</div>
 		</div>
 		<script src="dist/reveal.js"></script>
