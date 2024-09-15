@@ -1,17 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
 		<title>TheoInf</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/reset.css"/>
+		<link rel="stylesheet" href="dist/reveal.css"/>
+		<link rel="stylesheet" href="dist/theme/black.css"/>
 
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="plugin/highlight/monokai.css"/>
         <style>
             .muchtext {
                 font-size: 20px;
@@ -36,7 +36,7 @@
 			<div class="slides">
                 <section>
                     <h3>Theoretische Informatik I<br/> (Wirtschaftsinformatik)</h3>
-                    <p>Vorlesung Sommersemester 2023<br/>DHBW HN</p>
+                    <p>Vorlesung Wintersemester 2024<br/>DHBW HN</p>
                     <img data-src="images/slides.png" width="150px"/>
                 </section>
                 <section data-background-image="images/orga.jpg" data-background-opacity="0.2">
@@ -45,7 +45,7 @@
                         <h5 class="bb fragment">Wer hält die Vorlesung?</h5>
 
                         <p class="bb fragment">Tobias Weber 
-                            | <a href=mailto:mail@tgweber.de>mail@tgweber.de</a>
+                            | <a href="mailto:mail@tgweber.de">mail@tgweber.de</a>
                         </p>
                         <p class="bb fragment">
                             Github: <a href="https://github.com/tgweber">tgweber</a>
@@ -55,16 +55,23 @@
                                 </a>
                         </p>
                         <p class="bb fragment">Dr. rer. nat | M. Phil. | B.Sc.</p>
-                        <p class="bb fragment">2012-2019 Leibniz Rechenzentrum</p>
-                        <p class="bb fragment">2016-2021 
+                        <p class="bb fragment">2012-2019 <a href="https://www.lrz.de">Leibniz Rechenzentrum</a>
+                            <br/>
                             <a href="https://edoc.ub.uni-muenchen.de/28346/">
                                 Promotion Informatik (LMU)
                             </a>
                         </p>
-                        <p class="bb fragment">Seit 2020
+                        <p class="bb fragment">2021-2024
                             <a href="https://it.schwarz/">SIT</a>
-                            (verschiedene Rollen)
+                            DevOps, Solution Architect 
                         </p>
+                        <p class="bb fragment">seit 2024
+                            <a href="https://stackit.cloud/">STACKIT</a>
+                            Engineer 
+                        </p>
+                        <aside class="notes">
+                            Frage: Kurszusammensetzung
+                        </aside>
                     </section>
                     <section>
                         <h5 class="bb">Welche Materialien werden bereitgestellt?</h5>
@@ -145,7 +152,7 @@
                     <h4 class="wb">Überblick</h4>
                     <section>
                         <p>Was ist theoretische Informatik?</p>
-                        <img class="fragment" data-src="images/schnitt.png"</img>
+                        <img class="fragment" data-src="images/schnitt.png"/>
 			<aside class="notes">
 				<ul>
 					<li>Informatik: Konzepte (Berechenbarkeit, Automat/Maschine, etc.)</li>
@@ -212,8 +219,8 @@
                     </section>
                     <section data-background-image="images/sortiment.jpg">
                         <p class="bb">
-                            Als Verantwortliche:r fürs Spiegel-Management
-                            will ich eine nach Verkaufszahlen sortierte Liste von Artikeln,
+                            Als Spiegel-Manager:in
+                            will ich die nach Verkaufszahlen sortierte Artikelliste andersherum sortieren,
                             um die Regalaufteilung daran auszurichten.
                         </p>
                     </section>
@@ -258,36 +265,38 @@
                         <p class="fragment bb">Weglassen unwesentlicher Informationen</p>
                         <p class="fragment bb">Extrahieren wesentlicher Informationen</p>
                         <p class="fragment bb">Nötig: Kreative Intelligenz</p>
-                        <aside class="notes">
-                            Tafelbild:
-                            <ul>
-                                <li>Als Kommisionier:in möchte ich die Anzahl
-                                    der geplanten Paletten pro LKW kennen,
-                                    um zu sehen, ob Platz für den Hubwagen bleibt.
-                                    (ursprüngliche Userstory).
-                                </li>
-                                <li> Identifikation der Anzahl an Paletten,
-                                    um verfügbaren Platz zu quantifzieren.
-                                    (Wer die Anzahl kennen will
-                                    und wofür der Platz gedacht ist, ist für unseren
-                                    Zweck gleichgültig.)
-                                </li>
-                                <li>
-                                    Ist die Anzahl an Paletten (un)gerade?
-                                    (Es ist z.B. egal, ob zwei, drei oder
-                                    mehr Paletten pro LKW nebeneinander passen,
-                                    Hauptsache es bleibt Platz.)
-                                </li>
-                                <li>
-                                    Ist eine Zahl gerade?
-                                    (Es ist egal, ob wir dies für Paletten oder andere
-                                    Objekte entscheiden.)
-                                </li>
-                            </ul>
-                        </aside>
+                    </section>
+                    <section data-background-image="images/even.jpg">
+                        <h2 class="wb">Beispiel</h2>
+                        <div class="muchtext">
+                            <p class="fragment bb">
+                                Als Kommisionier:in möchte ich die Anzahl
+                                der geplanten Paletten pro LKW kennen,
+                                um zu sehen, ob Platz für den Hubwagen bleibt.
+                                (ursprüngpche Userstory).
+                            </p>
+                            <p class="fragment bb">
+                                Identifikation der Anzahl an Paletten,
+                                um verfügbaren Platz zu quantifzieren.
+                                (Wer die Anzahl kennen will
+                                und wofür der Platz gedacht ist, ist für unseren
+                                Zweck gleichgültig.)
+                            </p>
+                            <p class="fragment bb">
+                                Ist die Anzahl an Paletten (un)gerade?
+                                (Es ist z.B. egal, ob zwei, drei oder
+                                mehr Paletten pro LKW nebeneinander passen,
+                                Hauptsache es bleibt Platz.)
+                            </p>
+                            <p class="fragment bb">
+                                Ist eine Zahl gerade?
+                                (Es ist egal, ob wir dies für Paletten oder andere
+                                Objekte entscheiden.)
+                            </p>
+                        </div>
                     </section>
                     <section>
-                        <h2 class="wb">Informelle Angabe</h2>
+                        <h2 class="wb">Informelle/Funktionelle Angabe</h2>
                         <p class="bb fragment">Gegeben: <br/>Eine Zahl</p>
                         <p class="bb fragment">Gesucht:<br/>
                             Ein Wahrheitswert, der anzeigt, ob die Zahl gerade ist.
@@ -295,7 +304,7 @@
                     </section>
                     <section>
                         <h2 class="wb">Grundsätzliche Fragen</h2>
-                        <p class="bb fragment">Wie <em>formalisieren</em> wir ein Problem?</p>
+                        <p class="bb fragment">In welcher <em>Form</em> untersuchen wir ein Problem?</p>
                         <p class="bb fragment">Wie <em>schwer</em> ist ein Problem?</p>
                         <p class="bb fragment">Ist ein Problem <em>lösbar</em>?</p>
                     </section>
@@ -350,12 +359,11 @@
                             $w^{0} = \epsilon$
                         </p>
                         <p class="bb fragment">
-                            Kleene-Stern</br>
+                            Kleene-Stern<br/>
                             $1^{*} = \{\epsilon, 1, 11, 111 \ldots\}$<br/>
                             $w^{*} = \{\epsilon, 110, 110110, \ldots\}$
                         </p>
                     </section>
-                    <!--
                     <section>
                         <p class="bb">
                             Teilwortfunktion
@@ -373,7 +381,7 @@
                             $tw(1001,1,2) = 00$
                         </p>
                     </section>
-                    -->
+
                 </section>
                 <section data-background-image="images/fl.jpg">
                     <h5 class="wb">Formale Sprachen</h5>
@@ -383,7 +391,7 @@
                             </p>
                             <p class="bb fragment">
                                 Beispiel:<br/>
-                                $ L = \{0, 1, 00, 01, 10, 11\}$
+                                $L = \{0, 1, 00, 01, 10, 11\}$
                             </p>
                             <p class="bb fragment">
                                 $L \subseteq \Sigma^*$
@@ -396,6 +404,7 @@
                                 <li>Theoretisches Interesse</li>
                                 <li>Theorie der Programmierspachen</li>
                                 <li>Compilerbau</li>
+                            </ul>
                         </aside>
                         <p class="bb fragment">
                             Probleme $\neq$ Formale Sprachen
@@ -442,9 +451,6 @@
 		<script src="plugin/highlight/highlight.js"></script>
         <script src="plugin/math/math.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
 
